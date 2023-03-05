@@ -1,0 +1,47 @@
+<div class="h-full overflow-hidden">
+  <main class="min-w-0 flex-1 border-t border-gray-200 lg:flex">
+    <form [formGroup]="userForm" (ngSubmit)="addDepense()" aria-labelledby="primary-heading"  class=" mt-10 flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last px-8">
+      <div class="bg-white px-4 py-5 sm:p-6">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label for="typeDepense" class="block text-sm font-medium text-gray-700">Type</label>
+            <select id="typeDepense"  formControlName="typeDepense"  name="typeDepense" class="mt-1 block w-full rounded-md border-amber-400 py-2 pl-3 pr-10 text-base focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              <option selected>choisir un type : </option>
+              <option>DECES</option>
+              <option>AUTRES</option>
+            </select>
+          </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Description</label>
+              <input type="text" formControlName="description"  autocomplete="given-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+            </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label class="block text-sm font-medium text-gray-700">Nom</label>
+            <input type="text" formControlName="nom"  autocomplete="given-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label class="block text-sm font-medium text-gray-700">Prénom</label>
+            <input type="text" formControlName="prenom"  autocomplete="family-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label class="block text-sm font-medium text-gray-700">Date</label>
+            <input type="text" formControlName="date" autocomplete="tel" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label class="block text-sm font-medium text-gray-700">Somme</label>
+            <input type="text" formControlName="somme" autocomplete="adresse" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+          </div>
+         <br>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 text-right sm:px-6 pl-12 mb-8 md:mb-0 sm:mb-0 lg:mb-0 ">
+          <button type="submit" [disabled]="userForm.invalid" class="mt-2 inline-flex justify-center rounded-md border border-transparent bg-amber-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2">Ajouter</button>
+        </div>
+      </div>
+    </form>
+    <aside class="hidden lg:order-first lg:block lg:flex-shrink-0">
+      <div class="relative flex h-full w-96 flex-col overflow-y-auto border-r border-gray-200 bg-gray-100">
+        <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Formulaire depense</h2>
+      </div>
+    </aside>
+  </main>
+</div>

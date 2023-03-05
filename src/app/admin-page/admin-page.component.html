@@ -1,0 +1,77 @@
+<div class="h-full fixed">
+<head>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="src/tailwing.config.js"></script>
+</head>
+<div class="h-full overflow-hidden">
+
+<div class="flex h-full flex-col">
+  <!-- Top nav-->
+  <div class="relative flex h-16 flex-shrink-0 items-center bg-white">
+    <!-- Logo area -->
+    <div class="absolute inset-y-0 left-0 md:static md:flex-shrink-0">
+      <a routerLink="/admin/list-membre" class="flex h-16 w-16 items-center justify-center bg-amber-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-600 md:w-20">
+        <img class="h-8 w-auto" src="assets/logo-white.svg" alt="hocoulou">
+      </a>
+    </div>
+
+    <!-- Picker area -->
+    <div class="mx-auto md:hidden">
+      <div class="relative">
+        <label for="inbox-select" class="sr-only">Choose inbox</label>
+        <select id="inbox-select" class="rounded-md border-0 bg-none pl-3 pr-8 text-base font-medium text-gray-900 focus:ring-2 focus:ring-amber-600">
+
+          <option class="menu-button" data-content-id="content1">Utilisateurs</option>
+          <option class="menu-button" data-content-id="content2">Dépenses</option>
+          <option class="menu-button" data-content-id="content3">Dettes</option>
+          <option class="menu-button" data-content-id="content4" selected>Adhésion</option>
+          <option>Déconnexion</option>
+
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-2">
+          <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom section -->
+  <div class="flex min-h-0 flex-1 overflow-hidden">
+    <!-- Narrow sidebar-->
+    <nav class="hidden md:block md:flex-shrink-0 md:overflow-y-auto md:bg-blue-900">
+      <div class="relative flex w-20 flex-col space-y-3 p-3">
+        <a routerLink="/admin/list-membre" class="menu-button bg-blue-700 text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg" data-content-id="content1">
+          <span class="sr-only">Utilisateurs</span>
+          <img class="h-6 w-6" src="assets/users-light (1).svg" alt="hocoulou">
+        </a>
+        <a routerLink="/admin/depense" class="menu-button text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg" data-content-id="content2">
+          <span class="sr-only">Depenses</span>
+          <img class="h-6 w-6" src="assets/euro-sign-light.svg" alt="hocoulou">
+        </a>
+        <a routerLink="/admin/dette" class="menu-button text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg" data-content-id="content3">
+          <span class="sr-only">Dettes</span>
+          <img class="h-6 w-6" src="assets/sensor-triangle-exclamation-light.svg" alt="hocoulou">
+        </a>
+        <a routerLink="/admin/adherent" class="menu-button text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg" data-content-id="content4">
+          <span class="sr-only">Adhésion</span>
+          <img class="h-6 w-6" src="assets/users-gear-light.svg" alt="hocoulou">
+        </a>
+        <a (click)="onSignOut()" class="text-gray-400  bottom-0 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
+          <span class="sr-only">Déconnexion</span>
+          <img class="h-6 w-6" src="assets/arrow-right-from-bracket-light.svg" alt="hocoulou">
+        </a>
+        <a class="relative inline-block text-left" style=" float: bottom">
+          <img class="h-10 w-15" src="assets/utilisateur.png">
+          <strong style="color: aliceblue; width: 10px;">{{userName | uppercase}}</strong>
+        </a>
+      </div>
+    </nav>
+    <!-- Main area -->
+    <div class="min-w-0 flex-1  lg:flex">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="h-full overflow-hidden">
+  <main class="min-w-0 flex-1 border-t border-gray-200 lg:flex">
+  <form [formGroup]="userForm" (ngSubmit)="addUser()" aria-labelledby="primary-heading"  class=" mt-10 flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last px-8">
+    <div class="bg-white px-4 py-5 sm:p-6">
+      <div class="grid grid-cols-6 gap-6">
+        <div class="col-span-6 sm:col-span-3">
+          <label class="block text-sm font-medium text-gray-700">Nom</label>
+          <input type="text" formControlName="nom"  autocomplete="given-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+        </div>
+        <div class="col-span-6 sm:col-span-3">
+          <label class="block text-sm font-medium text-gray-700">Prénom</label>
+          <input type="text" formControlName="prenom"  autocomplete="family-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+        </div>
+        <div class="col-span-6 sm:col-span-3">
+          <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+          <input type="text" formControlName="telephone" autocomplete="tel" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+        </div>
+        <div class="col-span-6 sm:col-span-3">
+          <label class="block text-sm font-medium text-gray-700">Domicile</label>
+          <input type="text" formControlName="domicile" autocomplete="adresse" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+        </div>
+        <div class="col-span-6 sm:col-span-3">
+          <label class="block text-sm font-medium text-gray-700">Montant d'adhésion</label>
+          <input type="number" formControlName="montantAdhesion" autocomplete="Montant" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+        </div><br>
+      </div>
+      <div formArrayName="adherant">
+        <div  *ngFor="let getAnne of getYears.controls; let i=index">
+          <div [formGroup]="newYears" class="form-group row">
+            <div class="form-group col-sm-6 mb-3">
+              <label for="street-address" class="block text-sm font-medium text-gray-700">Année</label>
+              <input type="text" formControlName="annee" id="street-address" autocomplete="street-address" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+            </div>
+            <div class="col-span-6 form-group col-sm-6 mb-3">
+              <label class="block text-sm font-medium text-gray-700">Montant</label>
+              <input type="number" formControlName="montant" id="Montant Année" autocomplete="Montant Année" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 sm:text-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 px-4 py-3 text-right sm:px-6 pl-12 mb-8 md:mb-0 sm:mb-0 lg:mb-0 ">
+      <button type="button" (click)="addYeats()" class=" inline-flex justify-center rounded-md border border-transparent bg-green-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2">Ajouter une année</button>&nbsp;&nbsp;
+      <button type="button" (click)="resetYears()" class="mt-2 inline-flex justify-center rounded-md border border-transparent bg-red-700 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2">Supprimer une année</button>&nbsp;&nbsp;
+      <button type="submit" [disabled]="userForm.invalid" class="mt-2 inline-flex justify-center rounded-md border border-transparent bg-amber-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2">Adhérer</button>
+    </div>
+  </form>
+  <aside class="hidden lg:order-first lg:block lg:flex-shrink-0">
+    <div class="relative flex h-full w-96 flex-col overflow-y-auto border-r border-gray-200 bg-gray-100">
+      <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Formulaire d'adhésion</h2>
+    </div>
+  </aside>
+  </main>
+</div>

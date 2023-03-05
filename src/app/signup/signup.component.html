@@ -1,0 +1,75 @@
+<div class="overflow-hidden bg-white py-16 px-6 lg:px-8 lg:py-24">
+  <div class="relative mx-auto max-w-xl">
+    <svg class="absolute left-full translate-x-1/2 transform" width="404" height="404" fill="none" viewBox="0 0 404 404" aria-hidden="true">
+      <defs>
+        <pattern id="85737c0e-0916-41d7-917f-596dc7edfa27" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="404" height="404" fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
+    </svg>
+    <svg class="absolute right-full bottom-0 -translate-x-1/2 transform" width="404" height="404" fill="none" viewBox="0 0 404 404" aria-hidden="true">
+      <defs>
+        <pattern id="85737c0e-0916-41d7-917f-596dc7edfa27" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="404" height="404" fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
+    </svg>
+    <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Inscription à la caisse Hocoulou</h2>
+        <p class="mt-2 text-center text-sm text-gray-600">
+          Ou
+          <a href="#" class="font-medium text-amber-400 hover:text-amber-600">contactez-nous pour vous inscrire</a>
+        </p>
+      </div>
+
+      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <form class="space-y-6" [formGroup]="signUpForm"  (ngSubmit)="signUp()"
+          >
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Nom *</label>
+              <div class="mt-1">
+                <input id=" name" name="nom" type="text" formControlName="nom"  required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Prénom *</label>
+              <div class="mt-1">
+                <input id="pernom" name="prenom" type="text" formControlName="prenom"  required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
+              <div class="mt-1">
+                <input id="email" name="email" type="email" formControlName="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe * </label>
+              <div class="mt-1">
+                <input id="password" name="password" type="password" formControlName="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              </div>
+            </div>
+            <div class="space-y-1">
+              <label for="password" class="block text-sm font-medium text-gray-700">Confimer le mot de passe * </label>
+              <div class="mt-1">
+                <input id="cpassword" name="password" type="password" formControlName="confirmPassword" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-amber-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2">Inscription</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

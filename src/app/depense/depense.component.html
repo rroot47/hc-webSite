@@ -1,0 +1,63 @@
+<div aria-labelledby="primary-heading" class=" mt-10 flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last ">
+  <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Les Depense</h2>
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="sm:flex sm:items-center">
+      <div class="sm:flex-auto">
+        <p class="mt-2 text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+      </div>
+      <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+        <button  routerLink="/admin/add-depense" type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-amber-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 sm:w-auto">Ajouter une depense</button>
+      </div>
+    </div>
+    <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Somme totals en caisse : {{ sommeTT }}</h2>
+    <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Depense totals : {{ sommeTTDepense }}</h2>
+    <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Les restes : {{ sommeTT - sommeTTDepense }}</h2>
+    <div class="mt-8 flex flex-col">
+      <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+          <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Type Depense</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Nom</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Prénom</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Description</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Date</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Somme</th>
+              </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <tr *ngFor="let depense of depenseModel">
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
+                    <div class="flex items-center">
+                      <div class="ml-4">
+                        <div class="font-medium text-gray-900">{{depense.typeDepense}}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <div class="text-gray-900">{{depense.nom}}</div>
+                  </td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <div class="text-gray-900">{{depense.prenom}}</div>
+                  </td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <div class="text-gray-900">{{depense.description}}</div>
+                  </td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <div class="text-gray-900">{{depense.date}}</div>
+                  </td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    <div class="text-gray-900">{{depense.somme}} </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
