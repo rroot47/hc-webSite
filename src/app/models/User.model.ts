@@ -10,9 +10,3 @@ export  class UserModel{
   }
 }
 
-export interface UserInterface{
-  membres:UserModel,
-  page:number,
-  size:number,
-  totalPage:number
-}

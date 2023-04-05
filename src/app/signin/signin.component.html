@@ -8,17 +8,27 @@
             <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
               <p class="text-danger"> {{ errorMessage }}</p>
             </div>
-            <div>
+            <div class="space-y-1">
               <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
               <div class="mt-1">
                 <input id="email" name="email" type="email" formControlName="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
               </div>
+              <span  class="text-danger"
+                *ngIf="signInForm.controls['email'].touched &&
+                 signInForm.controls['email'].errors &&signInForm.controls['email'].errors!['email']">
+                Email is not valid
+              </span>
             </div>
             <div class="space-y-1">
               <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe * </label>
               <div class="mt-1">
                 <input id="password" name="password" type="password" formControlName="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
               </div>
+              <span  class="text-danger"
+                     *ngIf="signInForm.controls['password'].touched &&
+                 signInForm.controls['password'].errors &&signInForm.controls['password'].errors!['required']">
+                Password is Required
+              </span>
             </div>
 
             <div class="flex items-center justify-between">
