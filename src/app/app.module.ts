@@ -22,12 +22,16 @@ import { ListMembreComponent } from './list-membre/list-membre.component';
 import { VerifyAcountComponent } from './verify-acount/verify-acount.component';
 import { FormDepenseComponent } from './form-depense/form-depense.component';
 import { EditMembreComponent } from './edit-membre/edit-membre.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {BnNgIdleService} from "bn-ng-idle";
+import { SingleMembreComponent } from './single-membre/single-membre.component';
 
 const routes : Routes = [
   {path: 'home', component: HomeComponent},
+  {path: 'dash', component: DashboardComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
- /* {path: 'verify-acount', component: VerifyAcountComponent},*/
+  {path: 'verify-acount', component: VerifyAcountComponent},
   {path : 'admin', component:AdminPageComponent, canActivate:[AuthGuardService], children:[
       {path : 'list-membre', component:ListMembreComponent},
       {path : 'adherent', component:AdherentComponent},
@@ -35,7 +39,7 @@ const routes : Routes = [
       {path : 'depense', component:DepenseComponent},
       {path:'add-depense', component:FormDepenseComponent},
       {path : 'edit-membre/:id', component:EditMembreComponent},
-      {path: 'verify-acount', component: VerifyAcountComponent},
+      {path : 'single-membre/:id', component:SingleMembreComponent}
     ]
   },
   {path : '', redirectTo : 'home', pathMatch : 'full'},
@@ -65,12 +69,14 @@ const routes : Routes = [
     ListMembreComponent,
     VerifyAcountComponent,
     FormDepenseComponent,
-    EditMembreComponent
+    EditMembreComponent,
+    DashboardComponent,
+    SingleMembreComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), ReactiveFormsModule, HttpClientModule
   ],
-  providers:[AuthService ,{provide:HTTP_INTERCEPTORS, useClass:RequestInterceptorService, multi:true}],
+  providers:[AuthService ,{provide:HTTP_INTERCEPTORS, useClass:RequestInterceptorService, multi:true}, BnNgIdleService],
   bootstrap:[AppComponent]
 })
 export class AppModule { }

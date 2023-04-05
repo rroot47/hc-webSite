@@ -34,6 +34,7 @@ export class VerifyAcountComponent implements OnInit {
     return this.userService.getUserByCode(code).subscribe(data=>{
       this.utilisateurModel = data;
       this.userService.verifyUser(code).subscribe(data=>{
+        localStorage.setItem("code", this.utilisateurModel.verificationCode);
         this.router.navigateByUrl("/signin");
       })
     },
